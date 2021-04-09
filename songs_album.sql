@@ -48,4 +48,7 @@ SELECT * FROM Songs;
 JOIN Song_id on Album_id = Song_id.albumname
 WHERE Album.year_published > 1970 AND Album.year_published < 1980
  
-SELECT songs FROM Albums WHERE name contains 'California';
+SELECT songs.name AS song_name, Albums.name AS album_name FROM songs
+  JOIN Albums on 
+   album_id = Albums.id
+ WHERE Albums.name LIKE ('%California%');
